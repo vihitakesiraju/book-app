@@ -1,1 +1,50 @@
-// add your code here
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h3>Book Store App</h3>
+      <ul class="nav nav-pills">
+          <li class="active"><a href="/home">List All Books</a></li>
+          <li><a href="/create">Create a Book</a></li>
+          <li><a href="/delete">Delete a Book</a></li>
+      </ul>
+  </div>
+    <div class="container">
+
+      <br>
+      <h2>Enter the details of the new book along with the author's name</h2>
+      <h3>
+        <% if(typeof bfound != 'undefined' && bfound!==null){ %>
+           <p>Book Id already exists. Please try with a new id</p>
+        <% } %>
+        <% if(typeof iddef!= 'undefined' && iddef===false){ %>
+          <p> Invalid Id......Please an number ID(such as 1,2,3)</p>
+
+        <% } %>
+      </h3>
+      <form action="http://127.0.0.1:3000/create" method="post" id="create">
+        <label>Book ID (required)</label>
+        <input type="text" class="form-control" name="id" placeholder="BookID" required ></input>
+         <br>
+      <label>Title of the Book (required)</label>
+      <input type="text" class="form-control" name="title" placeholder="title" minlength="2" maxlength="20" required ></input>
+       <br>
+      <label>Name of the Author (required)</label>
+      <input type="text" class="form-control" name="author" placeholder="Name of the author" minlength="2" maxlength="20" required></input>
+      <br>     
+      <button type="submit" class=btn btn-primary>Submit</button> 
+      
+  
+      </form>
+    </div>
+  </body>
+</html>

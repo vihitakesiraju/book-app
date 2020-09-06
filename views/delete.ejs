@@ -1,1 +1,35 @@
-// add your code here
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+        <h3>Book Store App</h3>
+        <ul class="nav nav-pills">
+            <li class="active"><a href="/home">List All Books</a></li>
+            <li><a href="/create">Create a Book</a></li>
+            <li><a href="/delete">Delete a Book</a></li>
+        </ul>
+    </div>
+    <div class="container">
+       <br>
+        <h2>Enter the ID of the book to be deleted (required) </h2>
+        <form action="http://127.0.0.1:3000/delete" method="post" id="create">
+        <input type="text" class="form-control" name="id" placeholder="ID to be deleted" required></input>
+        <br>     
+      <button type="submit" class=btn btn-primary>Submit</button>
+      <h3>
+        <% if(typeof book === 'undefined'){ %>
+           <p>Book Id doesnot exists. Please try with a new ID</p>
+        <% } %>
+        </h3>
+
+  </body>
+</html>
